@@ -112,6 +112,9 @@
       "relation": "manyToOne",
       "target": "api::forum.forum",
       "inversedBy": "signatures"
+    },
+    "profile_url": {
+      "type": "string"
     }
   }
 }
