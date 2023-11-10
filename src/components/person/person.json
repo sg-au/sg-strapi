@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_person_people",
+  "info": {
+    "displayName": "Person",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

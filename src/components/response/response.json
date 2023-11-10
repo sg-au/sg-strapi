@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_response_responses",
+  "info": {
+    "displayName": "Response",
+    "icon": "check",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "response": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "departments",
+  "info": {
+    "singularName": "department",
+    "pluralName": "departments",
+    "displayName": "Department",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "department"
+    },
+    "tickets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ticket.ticket",
+      "mappedBy": "departments"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forums",
+  "info": {
+    "singularName": "forum",
+    "pluralName": "forums",
+    "displayName": "Forum",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "forum"
+    },
+    "signatures": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "forum"
+    }
+  }
+}

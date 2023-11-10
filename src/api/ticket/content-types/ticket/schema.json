@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Ticket",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "departments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::department.department",
+      "inversedBy": "tickets"
+    },
+    "category": {
+      "type": "string"
+    },
+    "subcategory": {
+      "type": "string"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "ticket"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "ticket": {
+      "type": "text"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "resolved"
+      ]
+    },
+    "details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "person.person"
+    },
+    "raisedAt": {
+      "type": "datetime"
+    },
+    "response": {
+      "type": "component",
+      "repeatable": false,
+      "component": "response.response"
+    }
+  }
+}
