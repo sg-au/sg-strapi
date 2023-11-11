@@ -24,12 +24,6 @@
     "subcategory": {
       "type": "string"
     },
-    "author": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "ticket"
-    },
     "subject": {
       "type": "string"
     },
@@ -48,13 +42,16 @@
       "repeatable": false,
       "component": "person.person"
     },
-    "raisedAt": {
-      "type": "datetime"
-    },
     "response": {
       "type": "component",
       "repeatable": false,
       "component": "response.response"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "tickets"
     }
   }
 }

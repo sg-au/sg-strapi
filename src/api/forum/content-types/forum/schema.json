@@ -26,9 +26,9 @@
     },
     "signatures": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "forum"
+      "mappedBy": "forums"
     }
   }
 }

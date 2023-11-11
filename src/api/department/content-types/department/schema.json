@@ -26,6 +26,12 @@
       "relation": "manyToMany",
       "target": "api::ticket.ticket",
       "mappedBy": "departments"
+    },
+    "announcement": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::announcement.announcement",
+      "mappedBy": "department"
     }
   }
 }

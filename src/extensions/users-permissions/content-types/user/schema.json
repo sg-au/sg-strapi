@@ -86,9 +86,9 @@
     "floor": {
       "type": "integer"
     },
-    "ticket": {
+    "tickets": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::ticket.ticket",
       "mappedBy": "author"
     },
@@ -101,20 +101,23 @@
     "type": {
       "type": "string"
     },
-    "comment": {
+    "profile_url": {
+      "type": "string"
+    },
+    "reason_blocked": {
+      "type": "text"
+    },
+    "comments": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::comment.comment",
       "mappedBy": "author"
     },
-    "forum": {
+    "forums": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "manyToMany",
       "target": "api::forum.forum",
       "inversedBy": "signatures"
-    },
-    "profile_url": {
-      "type": "string"
     }
   }
 }
