@@ -33,6 +33,9 @@
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "description": {
+      "type": "text"
     }
   }
 }
