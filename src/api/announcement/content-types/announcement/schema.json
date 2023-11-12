@@ -18,8 +18,15 @@
       "target": "api::department.department",
       "inversedBy": "announcement"
     },
+    "title": {
+      "type": "string"
+    },
     "announcement": {
-      "type": "text"
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }

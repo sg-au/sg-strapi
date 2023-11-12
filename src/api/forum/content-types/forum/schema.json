@@ -35,7 +35,9 @@
       "customField": "plugin::ckeditor5.CKEditor"
     },
     "description": {
-      "type": "text"
+      "type": "text",
+      "required": true,
+      "maxLength": 300
     }
   }
 }
