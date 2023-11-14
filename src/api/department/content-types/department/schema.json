@@ -32,6 +32,12 @@
       "relation": "oneToOne",
       "target": "api::announcement.announcement",
       "mappedBy": "department"
+    },
+    "forums": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::forum.forum",
+      "mappedBy": "department"
     }
   }
 }

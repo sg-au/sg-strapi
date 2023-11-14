@@ -38,6 +38,12 @@
       "type": "text",
       "required": true,
       "maxLength": 300
+    },
+    "department": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::department.department",
+      "inversedBy": "forums"
     }
   }
 }
