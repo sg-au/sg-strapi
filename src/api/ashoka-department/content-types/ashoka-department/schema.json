@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ashoka_departments",
+  "info": {
+    "singularName": "ashoka-department",
+    "pluralName": "ashoka-departments",
+    "displayName": "Ashoka Department",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "faculties": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faculty.faculty",
+      "inversedBy": "ashoka_departments"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "inversedBy": "ashoka_departments"
+    },
+    "code": {
+      "type": "string"
+    }
+  }
+}

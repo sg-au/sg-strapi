@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "courseCode": {
+      "type": "string"
+    },
+    "courseTitle": {
+      "type": "string"
+    },
+    "classDetails": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "semester": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::semester.semester",
+      "inversedBy": "course"
+    },
+    "year": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::year.year",
+      "inversedBy": "course"
+    },
+    "ashoka_departments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ashoka-department.ashoka-department",
+      "mappedBy": "courses"
+    }
+  }
+}

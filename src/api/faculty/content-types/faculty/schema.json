@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faculties",
+  "info": {
+    "singularName": "faculty",
+    "pluralName": "faculties",
+    "displayName": "Faculty"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "ashoka_departments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ashoka-department.ashoka-department",
+      "mappedBy": "faculties"
+    }
+  }
+}
