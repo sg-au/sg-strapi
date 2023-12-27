@@ -4,7 +4,8 @@
   "info": {
     "singularName": "faculty",
     "pluralName": "faculties",
-    "displayName": "Faculty"
+    "displayName": "Faculty",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -15,12 +16,19 @@
       "type": "string"
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "unique": true
     },
     "ashoka_departments": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::ashoka-department.ashoka-department",
+      "mappedBy": "faculties"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
       "mappedBy": "faculties"
     }
   }

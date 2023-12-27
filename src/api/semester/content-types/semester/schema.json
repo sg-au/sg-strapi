@@ -13,12 +13,6 @@
   "attributes": {
     "semester": {
       "type": "string"
-    },
-    "course": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::course.course",
-      "mappedBy": "semester"
     }
   }
 }

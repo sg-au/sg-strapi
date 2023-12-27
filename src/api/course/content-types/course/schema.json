@@ -24,23 +24,35 @@
     "description": {
       "type": "text"
     },
-    "semester": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::semester.semester",
-      "inversedBy": "course"
-    },
-    "year": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::year.year",
-      "inversedBy": "course"
-    },
     "ashoka_departments": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::ashoka-department.ashoka-department",
       "mappedBy": "courses"
+    },
+    "semester": {
+      "type": "enumeration",
+      "enum": [
+        "monsoon",
+        "summer",
+        "spring"
+      ]
+    },
+    "year": {
+      "type": "integer"
+    },
+    "prerequisites": {
+      "type": "json"
+    },
+    "faculties": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faculty.faculty",
+      "inversedBy": "courses"
+    },
+    "uid": {
+      "type": "string",
+      "unique": true
     }
   }
 }
