@@ -30,6 +30,12 @@
       "relation": "manyToMany",
       "target": "api::course.course",
       "mappedBy": "faculties"
+    },
+    "course_reviews": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course-review.course-review",
+      "inversedBy": "faculties"
     }
   }
 }

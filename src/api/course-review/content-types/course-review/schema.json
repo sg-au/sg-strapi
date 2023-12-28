@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course-review",
     "pluralName": "course-reviews",
-    "displayName": "Course Review"
+    "displayName": "Course Review",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -102,6 +103,12 @@
     },
     "general_comments": {
       "type": "text"
+    },
+    "faculties": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faculty.faculty",
+      "mappedBy": "course_reviews"
     }
   }
 }
