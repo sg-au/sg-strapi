@@ -53,6 +53,12 @@
     "uid": {
       "type": "string",
       "unique": true
+    },
+    "course_reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-review.course-review",
+      "mappedBy": "course"
     }
   }
 }

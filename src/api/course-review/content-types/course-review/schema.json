@@ -1,0 +1,107 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_reviews",
+  "info": {
+    "singularName": "course-review",
+    "pluralName": "course-reviews",
+    "displayName": "Course Review"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "batch": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": [
+        "online",
+        "offline"
+      ]
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "course_reviews"
+    },
+    "grade_gotten": {
+      "type": "enumeration",
+      "enum": [
+        "A/A-",
+        "B+/B/B-",
+        "C+/C/C-",
+        "D+/D/D-",
+        "F",
+        "Have Not Received Grade",
+        "Do Not Wish to Reveal"
+      ]
+    },
+    "grading_type": {
+      "type": "enumeration",
+      "enum": [
+        "absolute",
+        "relative"
+      ]
+    },
+    "grading_transparent": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    },
+    "grading_transparent_elaborate": {
+      "type": "text"
+    },
+    "extracredit_provided": {
+      "type": "boolean"
+    },
+    "study_hours_outside_class": {
+      "type": "string"
+    },
+    "assignment_relatability": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    },
+    "assignment_relatability_elaborate": {
+      "type": "text"
+    },
+    "distributed_grading_components": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "grading_components_distributed_elaborate": {
+      "type": "text"
+    },
+    "accommodations_provided": {
+      "type": "text"
+    },
+    "openness_to_doubts": {
+      "type": "text"
+    },
+    "good_lecturer": {
+      "type": "integer",
+      "max": 5,
+      "min": 0
+    },
+    "good_lecturer_elaborate": {
+      "type": "text"
+    },
+    "influence_of_tf": {
+      "max": 10,
+      "min": 1,
+      "type": "integer"
+    },
+    "recommend": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    },
+    "general_comments": {
+      "type": "text"
+    }
+  }
+}
