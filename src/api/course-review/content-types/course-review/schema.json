@@ -86,7 +86,7 @@
     "good_lecturer": {
       "type": "integer",
       "max": 5,
-      "min": 0
+      "min": 1
     },
     "good_lecturer_elaborate": {
       "type": "text"
