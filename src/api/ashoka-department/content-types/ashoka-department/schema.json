@@ -28,7 +28,9 @@
       "inversedBy": "ashoka_departments"
     },
     "code": {
-      "type": "string"
+      "type": "string",
+      "unique": true,
+      "required": true
     },
     "course_reviews": {
       "type": "relation",
