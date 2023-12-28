@@ -109,6 +109,12 @@
       "relation": "manyToMany",
       "target": "api::faculty.faculty",
       "mappedBy": "course_reviews"
+    },
+    "ashoka_departments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ashoka-department.ashoka-department",
+      "inversedBy": "course_reviews"
     }
   }
 }

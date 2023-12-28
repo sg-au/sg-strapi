@@ -29,6 +29,12 @@
     },
     "code": {
       "type": "string"
+    },
+    "course_reviews": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course-review.course-review",
+      "mappedBy": "ashoka_departments"
     }
   }
 }
