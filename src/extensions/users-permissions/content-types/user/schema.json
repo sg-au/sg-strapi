@@ -118,6 +118,12 @@
       "relation": "manyToMany",
       "target": "api::forum.forum",
       "inversedBy": "signatures"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "author"
     }
   }
 }

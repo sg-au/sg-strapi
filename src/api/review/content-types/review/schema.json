@@ -1,0 +1,106 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reviews",
+  "info": {
+    "singularName": "review",
+    "pluralName": "reviews",
+    "displayName": "Review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "review": {
+      "type": "text"
+    },
+    "transparent": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "lecturer": {
+      "max": 5,
+      "min": 1,
+      "type": "integer"
+    },
+    "overall": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "relatability": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "extracredit": {
+      "type": "boolean"
+    },
+    "grading_type": {
+      "type": "enumeration",
+      "enum": [
+        "absolute",
+        "relative"
+      ]
+    },
+    "grade": {
+      "type": "enumeration",
+      "enum": [
+        "A/A-",
+        "B+/B/B-",
+        "C+/C/C-",
+        "D+/D/D-",
+        "F",
+        "have not received yet",
+        "do not wish to reveal"
+      ]
+    },
+    "batch": {
+      "type": "enumeration",
+      "enum": [
+        "ASP23",
+        "UG24",
+        "UG25",
+        "UG2023",
+        "Other"
+      ]
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "reviews"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "reviews"
+    },
+    "strict": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "fair": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "mode": {
+      "type": "enumeration",
+      "enum": [
+        "online",
+        "offline"
+      ]
+    },
+    "tf": {
+      "type": "text"
+    },
+    "major": {
+      "type": "string"
+    }
+  }
+}
