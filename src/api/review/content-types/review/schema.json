@@ -18,22 +18,21 @@
     "transparent": {
       "type": "integer",
       "max": 5,
-      "min": 1
+      "min": 0
     },
     "lecturer": {
       "max": 5,
-      "min": 1,
+      "min": 0,
       "type": "integer"
     },
     "overall": {
       "type": "integer",
-      "max": 5,
-      "min": 1
+      "max": 5
     },
     "relatability": {
       "type": "integer",
       "max": 5,
-      "min": 1
+      "min": 0
     },
     "extracredit": {
       "type": "boolean"
@@ -82,12 +81,12 @@
     "strict": {
       "type": "integer",
       "max": 5,
-      "min": 1
+      "min": 0
     },
     "fair": {
       "type": "integer",
       "max": 5,
-      "min": 1
+      "min": 0
     },
     "mode": {
       "type": "enumeration",
@@ -101,6 +100,9 @@
     },
     "major": {
       "type": "string"
+    },
+    "cr": {
+      "type": "boolean"
     }
   }
 }
