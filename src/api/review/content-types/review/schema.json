@@ -60,6 +60,7 @@
       "type": "enumeration",
       "enum": [
         "ASP23",
+        "ASP24",
         "UG24",
         "UG25",
         "UG2023",
