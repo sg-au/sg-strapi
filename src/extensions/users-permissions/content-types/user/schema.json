@@ -125,11 +125,14 @@
       "target": "api::review.review",
       "mappedBy": "author"
     },
-    "bids": {
+    "pools": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::bid.bid",
-      "mappedBy": "users_permissions_user"
+      "target": "api::pool.pool",
+      "mappedBy": "pooler"
+    },
+    "phone": {
+      "type": "string"
     }
   }
 }

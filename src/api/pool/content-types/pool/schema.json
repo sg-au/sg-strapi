@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pools",
+  "info": {
+    "singularName": "pool",
+    "pluralName": "pools",
+    "displayName": "Pool",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "journey": {
+      "type": "enumeration",
+      "enum": [
+        "airport to campus",
+        "airport to jahangirpuri",
+        "jahangirpuri to campus"
+      ]
+    },
+    "pooler": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "pools"
+    },
+    "time": {
+      "type": "time"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "canceled",
+        "pooled"
+      ]
+    }
+  }
+}

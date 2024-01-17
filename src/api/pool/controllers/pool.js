@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * bid controller
+ * pool controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::bid.bid');
+module.exports = createCoreController('api::pool.pool');
