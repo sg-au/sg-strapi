@@ -124,6 +124,12 @@
       "relation": "oneToMany",
       "target": "api::review.review",
       "mappedBy": "author"
+    },
+    "bids": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bid.bid",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
