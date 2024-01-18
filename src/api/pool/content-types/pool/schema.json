@@ -36,6 +36,9 @@
         "canceled",
         "pooled"
       ]
+    },
+    "day": {
+      "type": "date"
     }
   }
 }
