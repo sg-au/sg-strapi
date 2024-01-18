@@ -17,7 +17,9 @@
       "enum": [
         "airport to campus",
         "airport to jahangirpuri",
-        "jahangirpuri to campus"
+        "jahangirpuri to campus",
+        "new delhi to campus",
+        "new delhi to jahangirpuri"
       ]
     },
     "pooler": {
