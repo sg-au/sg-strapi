@@ -44,6 +44,13 @@
       "relation": "manyToOne",
       "target": "api::department.department",
       "inversedBy": "forums"
+    },
+    "content2": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
