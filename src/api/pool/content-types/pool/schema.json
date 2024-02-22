@@ -16,10 +16,17 @@
       "type": "enumeration",
       "enum": [
         "airport to campus",
+        "campus to airport",
         "airport to jahangirpuri",
+        "jahangirpuri to airport",
         "jahangirpuri to campus",
+        "campus to jahangirpuri",
+        "campus to new delhi",
         "new delhi to campus",
-        "new delhi to jahangirpuri"
+        "new delhi to jahangirpuri",
+        "jahangirpuri to new delhi",
+        "gurgaon to campus",
+        "campus to gurgaon"
       ]
     },
     "pooler": {
