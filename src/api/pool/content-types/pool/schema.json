@@ -26,7 +26,21 @@
         "new delhi to jahangirpuri",
         "jahangirpuri to new delhi",
         "gurgaon to campus",
-        "campus to gurgaon"
+        "campus to gurgaon",
+        "campus to chandigarh",
+        "chandigarh to campus",
+        "campus to jaipur",
+        "jaipur to campus",
+        "campus to ludhiana",
+        "ludhiana to campus",
+        "campus to noida",
+        "noida to campus",
+        "campus to ghaziabad",
+        "ghaziabad to campus",
+        "campus to nizamuddin",
+        "nizamuddin to campus",
+        "campus to agra",
+        "agra to campus"
       ]
     },
     "pooler": {
