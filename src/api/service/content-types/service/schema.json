@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "service": {
+      "type": "enumeration",
+      "enum": [
+        "netflix",
+        "prime",
+        "chatgpt",
+        "chegg",
+        "others"
+      ]
+    },
+    "numberPeople": {
+      "type": "integer",
+      "min": 1,
+      "max": 20
+    },
+    "start": {
+      "type": "date"
+    },
+    "end": {
+      "type": "date"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "services"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "open",
+        "full",
+        "canceled"
+      ]
+    }
+  }
+}
