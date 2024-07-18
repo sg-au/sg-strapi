@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assets",
+  "info": {
+    "singularName": "asset",
+    "pluralName": "assets",
+    "displayName": "Asset",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "mobile",
+        "cable",
+        "adapter"
+      ]
+    },
+    "model": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "borrow_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::borrow-request.borrow-request",
+      "mappedBy": "asset"
+    },
+    "last_borrow_request": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::borrow-request.borrow-request",
+      "mappedBy": "is_the_latest_booking_of"
+    }
+  }
+}

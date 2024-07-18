@@ -139,6 +139,24 @@
       "relation": "oneToMany",
       "target": "api::service.service",
       "mappedBy": "user"
+    },
+    "borrow_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::borrow-request.borrow-request",
+      "mappedBy": "user"
+    },
+    "issued_borrow_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::borrow-request.borrow-request",
+      "mappedBy": "issued_by"
+    },
+    "returned_borrow_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::borrow-request.borrow-request",
+      "mappedBy": "returned_to"
     }
   }
 }

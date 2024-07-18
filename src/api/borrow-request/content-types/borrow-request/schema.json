@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "borrow_requests",
+  "info": {
+    "singularName": "borrow-request",
+    "pluralName": "borrow-requests",
+    "displayName": "Borrow Request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "from": {
+      "type": "date"
+    },
+    "to": {
+      "type": "date"
+    },
+    "issued": {
+      "type": "integer"
+    },
+    "returned": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "borrow_requests"
+    },
+    "asset": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::asset.asset",
+      "inversedBy": "borrow_requests"
+    },
+    "reason": {
+      "type": "text"
+    },
+    "issued_by": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "issued_borrow_requests"
+    },
+    "returned_to": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "returned_borrow_requests"
+    },
+    "is_the_latest_booking_of": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::asset.asset",
+      "inversedBy": "last_borrow_request"
+    },
+    "issued_on": {
+      "type": "date"
+    },
+    "returned_on": {
+      "type": "date"
+    }
+  }
+}
