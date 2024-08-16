@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hunt_teams",
+  "info": {
+    "singularName": "hunt-team",
+    "pluralName": "hunt-teams",
+    "displayName": "Hunt Team"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "hunt_team"
+    },
+    "treasure_hunt": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::treasure-hunt.treasure-hunt",
+      "inversedBy": "hunt_teams"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hunt_clues",
+  "info": {
+    "singularName": "hunt-clue",
+    "pluralName": "hunt-clues",
+    "displayName": "Hunt Clue"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "clue": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "clue_number": {
+      "type": "integer"
+    },
+    "hint": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

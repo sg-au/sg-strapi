@@ -52,6 +52,7 @@
         "C+/C/C-",
         "D+/D/D-",
         "F",
+        "P",
         "have not received yet",
         "do not wish to reveal"
       ]
@@ -64,6 +65,7 @@
         "UG24",
         "UG25",
         "UG2023",
+        "UG2024",
         "Other"
       ]
     },

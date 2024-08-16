@@ -157,6 +157,18 @@
       "relation": "oneToMany",
       "target": "api::borrow-request.borrow-request",
       "mappedBy": "returned_to"
+    },
+    "hunt_team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::hunt-team.hunt-team",
+      "inversedBy": "members"
+    },
+    "treasure_hunt": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::treasure-hunt.treasure-hunt",
+      "inversedBy": "organisers"
     }
   }
 }
