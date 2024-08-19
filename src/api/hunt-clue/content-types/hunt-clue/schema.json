@@ -4,10 +4,11 @@
   "info": {
     "singularName": "hunt-clue",
     "pluralName": "hunt-clues",
-    "displayName": "Hunt Clue"
+    "displayName": "Hunt Clue",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -27,6 +28,21 @@
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "treasure_hunt": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::treasure-hunt.treasure-hunt",
+      "inversedBy": "hunt_clues"
+    },
+    "clue_code": {
+      "type": "string"
+    },
+    "hints_claimed_by": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hunt-team.hunt-team",
+      "inversedBy": "hints_claimed_for"
     }
   }
 }

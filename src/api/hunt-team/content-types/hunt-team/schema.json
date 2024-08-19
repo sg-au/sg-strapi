@@ -4,7 +4,8 @@
   "info": {
     "singularName": "hunt-team",
     "pluralName": "hunt-teams",
-    "displayName": "Hunt Team"
+    "displayName": "Hunt Team",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -25,6 +26,24 @@
       "relation": "manyToOne",
       "target": "api::treasure-hunt.treasure-hunt",
       "inversedBy": "hunt_teams"
+    },
+    "hints_claimed": {
+      "type": "integer"
+    },
+    "hints_claimed_by": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "hunt_hints_claimed"
+    },
+    "clues_solved": {
+      "type": "integer"
+    },
+    "hints_claimed_for": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hunt-clue.hunt-clue",
+      "mappedBy": "hints_claimed_by"
     }
   }
 }

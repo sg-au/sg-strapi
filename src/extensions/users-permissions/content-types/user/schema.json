@@ -169,6 +169,12 @@
       "relation": "manyToOne",
       "target": "api::treasure-hunt.treasure-hunt",
       "inversedBy": "organisers"
+    },
+    "hunt_hints_claimed": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hunt-team.hunt-team",
+      "mappedBy": "hints_claimed_by"
     }
   }
 }

@@ -32,6 +32,12 @@
       "relation": "oneToMany",
       "target": "plugin::users-permissions.user",
       "mappedBy": "treasure_hunt"
+    },
+    "hunt_clues": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hunt-clue.hunt-clue",
+      "mappedBy": "treasure_hunt"
     }
   }
 }
