@@ -175,6 +175,9 @@
       "relation": "manyToMany",
       "target": "api::hunt-team.hunt-team",
       "mappedBy": "hints_claimed_by"
+    },
+    "cgpa_data": {
+      "type": "json"
     }
   }
 }
