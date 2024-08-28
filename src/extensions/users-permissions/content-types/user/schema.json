@@ -178,6 +178,9 @@
     },
     "cgpa_data": {
       "type": "json"
+    },
+    "pf_credits": {
+      "type": "integer"
     }
   }
 }
