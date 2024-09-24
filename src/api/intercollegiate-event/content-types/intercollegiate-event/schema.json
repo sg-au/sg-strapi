@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intercollegiate_events",
+  "info": {
+    "singularName": "intercollegiate-event",
+    "pluralName": "intercollegiate-events",
+    "displayName": "Intercollegiate Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "from": {
+      "type": "date"
+    },
+    "to": {
+      "type": "date"
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "website_link": {
+      "type": "string"
+    },
+    "form_link": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "college_name": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "enumeration",
+      "enum": [
+        "fest",
+        "single_event",
+        "seminar",
+        "conference"
+      ]
+    },
+    "image_url": {
+      "type": "string",
+      "default": "https://img.freepik.com/premium-vector/poster-festival-celebration-holiday-party-group-people-happy-be-together-celebrating-special-event_1343-461.jpg?semt=ais_hybrid"
+    }
+  }
+}
