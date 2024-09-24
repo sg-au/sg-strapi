@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sg_mails",
+  "info": {
+    "singularName": "sg-mail",
+    "pluralName": "sg-mails",
+    "displayName": "SG Mail"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "sg_mails"
+    },
+    "alias": {
+      "type": "enumeration",
+      "enum": [
+        "Inductions",
+        "Lost and Found",
+        "Jobs and Internships",
+        "Surveys",
+        "Campaigns",
+        "Fundraisers",
+        "Promotions",
+        "Invitations and Events"
+      ]
+    },
+    "mail_body": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "recipients": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "text"
+    }
+  }
+}

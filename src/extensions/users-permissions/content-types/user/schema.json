@@ -181,6 +181,12 @@
     },
     "pf_credits": {
       "type": "integer"
+    },
+    "sg_mails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sg-mail.sg-mail",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
