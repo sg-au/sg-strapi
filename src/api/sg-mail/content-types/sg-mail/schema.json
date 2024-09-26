@@ -4,14 +4,15 @@
   "info": {
     "singularName": "sg-mail",
     "pluralName": "sg-mails",
-    "displayName": "SG Mail"
+    "displayName": "SG Mail",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "users_permissions_user": {
+    "sender": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
@@ -27,7 +28,7 @@
         "Campaigns",
         "Fundraisers",
         "Promotions",
-        "Invitations and Events"
+        "Events and Invitations"
       ]
     },
     "mail_body": {
@@ -45,6 +46,23 @@
     },
     "notes": {
       "type": "text"
+    },
+    "attachment_path": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ]
+    },
+    "approver": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "approved_sg_mails"
     }
   }
 }
