@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organisations",
+  "info": {
+    "singularName": "organisation",
+    "pluralName": "organisations",
+    "displayName": "Organisation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "organisations"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "ministry",
+        "club",
+        "society",
+        "fest",
+        "collective",
+        "iso",
+        "league",
+        "other"
+      ]
+    },
+    "weblink": {
+      "type": "string"
+    },
+    "short_description": {
+      "type": "text"
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "humans": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "organisations_part_of"
+    },
+    "socials": {
+      "type": "json"
+    }
+  }
+}

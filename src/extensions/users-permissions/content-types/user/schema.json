@@ -193,6 +193,18 @@
       "relation": "oneToMany",
       "target": "api::sg-mail.sg-mail",
       "mappedBy": "approver"
+    },
+    "organisations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "profile"
+    },
+    "organisations_part_of": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "humans"
     }
   }
 }
