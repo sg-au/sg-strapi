@@ -4,7 +4,8 @@
   "info": {
     "singularName": "organisation",
     "pluralName": "organisations",
-    "displayName": "Organisation"
+    "displayName": "Organisation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -54,6 +55,10 @@
     },
     "socials": {
       "type": "json"
+    },
+    "logo_url": {
+      "type": "string",
+      "default": "https://img.freepik.com/premium-vector/poster-festival-celebration-holiday-party-group-people-happy-be-together-celebrating-special-event_1343-461.jpg?semt=ais_hybrid"
     }
   }
 }
