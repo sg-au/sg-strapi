@@ -200,11 +200,23 @@
       "target": "api::organisation.organisation",
       "mappedBy": "profile"
     },
-    "organisations_part_of": {
+    "organisations_circle1_of": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::organisation.organisation",
-      "mappedBy": "humans"
+      "mappedBy": "circle1_humans"
+    },
+    "organisations_circle2_of": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "circle2_humans"
+    },
+    "organisations_members_of": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "mappedBy": "members"
     }
   }
 }

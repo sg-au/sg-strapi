@@ -4,7 +4,8 @@
   "info": {
     "singularName": "organisation",
     "pluralName": "organisations",
-    "displayName": "Organisation"
+    "displayName": "Organisation",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -46,14 +47,38 @@
       },
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "humans": {
+    "circle1_humans": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "organisations_part_of"
+      "inversedBy": "organisations_circle1_of"
     },
-    "socials": {
-      "type": "json"
+    "instagram": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "website_blog": {
+      "type": "string"
+    },
+    "circle2_humans": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "organisations_circle2_of"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "organisations_members_of"
     }
   }
 }
