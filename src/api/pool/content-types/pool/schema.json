@@ -15,7 +15,9 @@
     "journey": {
       "type": "enumeration",
       "enum": [
-        "airport to campus",
+        "airport(T1) to campus",
+        "airport(T2) to campus",
+        "airport(T3) to campus",
         "campus to airport",
         "airport to jahangirpuri",
         "jahangirpuri to airport",
