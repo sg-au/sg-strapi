@@ -39,6 +39,12 @@
     "allDay": {
       "type": "boolean",
       "required": true
+    },
+    "uid": {
+      "type": "uid"
+    },
+    "host": {
+      "type": "email"
     }
   }
 }
