@@ -79,6 +79,19 @@
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
       "inversedBy": "organisations_members_of"
+    },
+    "induction": {
+      "type": "boolean"
+    },
+    "induction_end": {
+      "type": "datetime"
+    },
+    "induction_description": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbarBaloon"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
