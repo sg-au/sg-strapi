@@ -217,6 +217,9 @@
       "relation": "manyToMany",
       "target": "api::organisation.organisation",
       "mappedBy": "members"
+    },
+    "events_calendar_filter_preferences": {
+      "type": "json"
     }
   }
 }
