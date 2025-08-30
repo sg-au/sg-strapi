@@ -220,6 +220,12 @@
     },
     "events_calendar_filter_preferences": {
       "type": "json"
+    },
+    "track_deadline_fors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::organisation.organisation",
+      "inversedBy": "interested_applicants"
     }
   }
 }

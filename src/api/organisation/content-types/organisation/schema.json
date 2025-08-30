@@ -92,6 +92,15 @@
         "preset": "toolbarBaloon"
       },
       "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "interested_applicants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "track_deadline_fors"
+    },
+    "calendar_event_id": {
+      "type": "string"
     }
   }
 }
