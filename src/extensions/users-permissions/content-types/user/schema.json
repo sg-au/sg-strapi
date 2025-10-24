@@ -229,6 +229,11 @@
     },
     "semester_planner_tabs": {
       "type": "json"
+    },
+    "bookmarked_assets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::asset.asset"
     }
   }
 }

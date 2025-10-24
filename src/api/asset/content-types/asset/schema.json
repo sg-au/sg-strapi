@@ -51,9 +51,6 @@
         "videos",
         "audios"
       ]
-    },
-    "bookmarked": {
-      "type": "boolean"
     }
   }
 }
