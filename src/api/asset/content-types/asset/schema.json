@@ -40,6 +40,16 @@
       "relation": "oneToOne",
       "target": "api::borrow-request.borrow-request",
       "mappedBy": "is_the_latest_booking_of"
+    },
+    "Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

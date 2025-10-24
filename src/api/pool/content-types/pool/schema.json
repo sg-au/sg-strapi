@@ -12,47 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "journey": {
-      "type": "enumeration",
-      "enum": [
-        "airport to campus",
-        "airport(T1) to campus",
-        "airport(T2) to campus",
-        "airport(T3) to campus",
-        "campus to airport",
-        "campus to airport(T1)",
-        "campus to airport(T2)",
-        "campus to airport(T3)",
-        "airport to jahangirpuri",
-        "jahangirpuri to airport",
-        "airport to azadpur",
-        "azadpur to airport",
-        "jahangirpuri to campus",
-        "azadpur to campus",
-        "campus to jahangirpuri",
-        "campus to azadpur",
-        "campus to new delhi",
-        "new delhi to campus",
-        "new delhi to jahangirpuri",
-        "jahangirpuri to new delhi",
-        "gurgaon to campus",
-        "campus to gurgaon",
-        "campus to chandigarh",
-        "chandigarh to campus",
-        "campus to jaipur",
-        "jaipur to campus",
-        "campus to ludhiana",
-        "ludhiana to campus",
-        "campus to noida",
-        "noida to campus",
-        "campus to ghaziabad",
-        "ghaziabad to campus",
-        "campus to nizamuddin",
-        "nizamuddin to campus",
-        "campus to agra",
-        "agra to campus"
-      ]
-    },
     "pooler": {
       "type": "relation",
       "relation": "manyToOne",
@@ -72,6 +31,44 @@
     },
     "day": {
       "type": "date"
+    },
+    "From": {
+      "type": "enumeration",
+      "enum": [
+        "Campus",
+        "Jahangirpuri",
+        "Azadpur",
+        "Airport (T1)",
+        "Airport (T2)",
+        "Airport (T3)",
+        "New Delhi",
+        "Jaipur",
+        "Noida",
+        "Gurgaon",
+        "Ludhiana",
+        "Agra",
+        "Nizamuddin",
+        "Ghaziabad"
+      ]
+    },
+    "To": {
+      "type": "enumeration",
+      "enum": [
+        "Campus",
+        "Jahangirpuri",
+        "Azadpur",
+        "Airport (T1)",
+        "Airport (T2)",
+        "Airport (T3)",
+        "New Delhi",
+        "Jaipur",
+        "Noida",
+        "Gurgaon",
+        "Ludhiana",
+        "Agra",
+        "Nizamuddin",
+        "Ghaziabad"
+      ]
     }
   }
 }
