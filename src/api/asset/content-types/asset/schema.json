@@ -42,14 +42,18 @@
       "mappedBy": "is_the_latest_booking_of"
     },
     "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "bookmarked": {
+      "type": "boolean"
     }
   }
 }
