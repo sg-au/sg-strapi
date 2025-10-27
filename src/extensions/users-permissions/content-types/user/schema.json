@@ -234,6 +234,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::asset.asset"
+    },
+    "orgs_checklist": {
+      "type": "json"
+    },
+    "orgs_catalogue_filter_preferences": {
+      "type": "json"
     }
   }
 }
