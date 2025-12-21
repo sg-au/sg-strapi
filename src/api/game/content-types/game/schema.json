@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "games",
+  "info": {
+    "singularName": "game",
+    "pluralName": "games",
+    "displayName": "game"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "wordle": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "semester_planner_syncs",
+  "info": {
+    "singularName": "semester-planner-sync",
+    "pluralName": "semester-planner-syncs",
+    "displayName": "Semester Planner Sync"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "current": {
+      "type": "json"
+    }
+  }
+}
