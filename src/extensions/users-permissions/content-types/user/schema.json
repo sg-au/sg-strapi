@@ -240,6 +240,9 @@
     },
     "orgs_catalogue_filter_preferences": {
       "type": "json"
+    },
+    "course_trajectory": {
+      "type": "json"
     }
   }
 }
