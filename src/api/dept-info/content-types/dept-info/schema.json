@@ -1,0 +1,34 @@
+{
+    "kind": "collectionType",
+    "collectionName": "dept_infos",
+    "info": {
+        "singularName": "dept-info",
+        "pluralName": "dept-infos",
+        "displayName": "Dept Info",
+        "description": "Department information including degree templates and ideal trajectories"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "dept_code": {
+            "type": "string",
+            "required": true,
+            "unique": true
+        },
+        "dept_name": {
+            "type": "string",
+            "required": true
+        },
+        "degree_templates": {
+            "type": "json"
+        },
+        "ideal_trajectories": {
+            "type": "json"
+        },
+        "last_updated_by": {
+            "type": "email"
+        }
+    }
+}
