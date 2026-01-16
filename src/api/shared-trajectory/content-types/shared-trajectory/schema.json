@@ -1,0 +1,36 @@
+{
+    "kind": "collectionType",
+    "collectionName": "shared_trajectories",
+    "info": {
+        "singularName": "shared-trajectory",
+        "pluralName": "shared-trajectories",
+        "displayName": "Shared Trajectory",
+        "description": "User-shared course trajectories"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "semesters": {
+            "type": "json",
+            "required": true
+        },
+        "total_credits": {
+            "type": "integer",
+            "default": 0
+        },
+        "user": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "plugin::users-permissions.user"
+        }
+    }
+}
