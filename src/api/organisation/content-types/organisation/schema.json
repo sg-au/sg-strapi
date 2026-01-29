@@ -111,6 +111,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "advertisements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::advertisement.advertisement",
+      "mappedBy": "organisation"
     }
   }
 }

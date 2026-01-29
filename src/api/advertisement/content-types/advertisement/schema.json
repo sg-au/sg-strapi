@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "isActive": {
-      "type": "boolean"
-    },
     "title": {
       "type": "string"
     },
@@ -27,22 +24,20 @@
     "gradient": {
       "type": "string"
     },
-    "banner_image": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "buttons": {
       "type": "json"
     },
     "order": {
       "type": "integer"
+    },
+    "banner_url": {
+      "type": "text"
+    },
+    "organisation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organisation.organisation",
+      "inversedBy": "advertisements"
     }
   }
 }
