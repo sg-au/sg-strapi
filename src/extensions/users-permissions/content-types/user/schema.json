@@ -243,6 +243,9 @@
     },
     "course_trajectory": {
       "type": "json"
+    },
+    "wordle_data": {
+      "type": "json"
     }
   }
 }
