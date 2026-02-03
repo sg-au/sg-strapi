@@ -1,0 +1,18 @@
+{
+    "kind": "singleType",
+    "collectionName": "when2meet_drafts",
+    "info": {
+        "singularName": "when2meet-draft",
+        "pluralName": "when2meet-drafts",
+        "displayName": "When2Meet Drafts"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "current": {
+            "type": "json"
+        }
+    }
+}
