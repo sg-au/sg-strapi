@@ -1,0 +1,74 @@
+{
+    "kind": "collectionType",
+    "collectionName": "match_scores",
+    "info": {
+        "singularName": "match-score",
+        "pluralName": "match-scores",
+        "displayName": "Match Score",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "match_name": {
+            "type": "string",
+            "required": true
+        },
+        "league_name": {
+            "type": "string",
+            "required": true
+        },
+        "sport": {
+            "type": "string"
+        },
+        "match_status": {
+            "type": "enumeration",
+            "enum": [
+                "upcoming",
+                "live",
+                "paused",
+                "cancelled",
+                "completed"
+            ]
+        },
+        "date": {
+            "type": "datetime"
+        },
+        "team_a_name": {
+            "type": "string",
+            "required": true
+        },
+        "team_b_name": {
+            "type": "string",
+            "required": true
+        },
+        "team_a_color": {
+            "type": "string"
+        },
+        "team_b_color": {
+            "type": "string"
+        },
+        "team_a_score": {
+            "type": "integer",
+            "default": 0
+        },
+        "team_b_score": {
+            "type": "integer",
+            "default": 0
+        },
+        "team_a_logo": {
+            "type": "string"
+        },
+        "team_b_logo": {
+            "type": "string"
+        },
+        "sets": {
+            "type": "json"
+        },
+        "status": {
+            "type": "string"
+        }
+    }
+}
