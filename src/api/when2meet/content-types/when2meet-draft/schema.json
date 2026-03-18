@@ -1,0 +1,29 @@
+{
+    "kind": "collectionType",
+    "collectionName": "when2meet_drafts",
+    "info": {
+        "singularName": "when2meet-draft",
+        "pluralName": "when2meet-drafts",
+        "displayName": "When2Meet Draft",
+        "description": "Time table drafts for When2Meet feature"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "uid": {
+            "type": "string",
+            "required": true,
+            "unique": true
+        },
+        "grid": {
+            "type": "json",
+            "required": true
+        }
+    }
+}
