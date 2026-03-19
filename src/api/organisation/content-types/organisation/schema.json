@@ -102,21 +102,15 @@
     "calendar_event_id": {
       "type": "string"
     },
-    "banner": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
     "advertisements": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::advertisement.advertisement",
       "mappedBy": "organisation"
+    },
+    "banner_url": {
+      "type": "string",
+      "default": "https://res.cloudinary.com/dslawnz50/image/upload/v1769686905/platform-ads/1769686891126-ad-banner-1769686891125-orgs_catalogue_default.jpg"
     }
   }
 }
