@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aba_teams",
+  "info": {
+    "singularName": "aba-team",
+    "pluralName": "aba-teams",
+    "displayName": "ABA Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "group": {
+      "type": "string"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::aba-participant.aba-participant",
+      "mappedBy": "team"
+    },
+    "matches_as_team_a": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::aba-match.aba-match",
+      "mappedBy": "team_a"
+    },
+    "matches_as_team_b": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::aba-match.aba-match",
+      "mappedBy": "team_b"
+    },
+    "matches_played": {
+      "type": "integer",
+      "default": 0
+    },
+    "matches_won": {
+      "type": "integer",
+      "default": 0
+    },
+    "matches_lost": {
+      "type": "integer",
+      "default": 0
+    },
+    "matches_tied": {
+      "type": "integer",
+      "default": 0
+    },
+    "points": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

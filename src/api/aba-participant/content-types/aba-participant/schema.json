@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "aba_participants",
+  "info": {
+    "singularName": "aba-participant",
+    "pluralName": "aba-participants",
+    "displayName": "ABA Participant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::aba-team.aba-team",
+      "inversedBy": "members"
+    },
+    "points_scored": {
+      "type": "integer",
+      "default": 0
+    },
+    "fouls": {
+      "type": "integer",
+      "default": 0
+    },
+    "assists": {
+      "type": "integer",
+      "default": 0
+    },
+    "rebounds": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
