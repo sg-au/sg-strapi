@@ -25,6 +25,9 @@
     },
     "hint": {
       "type": "string"
+    },
+    "about_word": {
+      "type": "richtext"
     }
   }
 }
