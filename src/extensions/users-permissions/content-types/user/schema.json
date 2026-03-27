@@ -246,6 +246,12 @@
     },
     "wordle_data": {
       "type": "json"
+    },
+    "fantasy_teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::aba-participant.aba-participant",
+      "inversedBy": "users_fantasy"
     }
   }
 }
