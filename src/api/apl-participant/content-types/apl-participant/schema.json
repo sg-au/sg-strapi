@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apl_participants",
+  "info": {
+    "singularName": "apl-participant",
+    "pluralName": "apl-participants",
+    "displayName": "APL_Participant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "isCM": {
+      "type": "boolean",
+      "default": false
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::apl-team.apl-team",
+      "inversedBy": "participants"
+    },
+    "sold_at": {
+      "type": "float"
+    },
+    "tier": {
+      "type": "enumeration",
+      "enum": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    }
+  }
+}

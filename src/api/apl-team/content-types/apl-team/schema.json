@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apl_teams",
+  "info": {
+    "singularName": "apl-team",
+    "pluralName": "apl-teams",
+    "displayName": "APL_Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "participants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apl-participant.apl-participant",
+      "mappedBy": "team"
+    },
+    "matches_as_team_a": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apl-match.apl-match",
+      "mappedBy": "team_a"
+    },
+    "matches_as_team_b": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apl-match.apl-match",
+      "mappedBy": "team_b"
+    }
+  }
+}
