@@ -15,11 +15,25 @@
     "name": {
       "type": "string"
     },
-    "participants": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::apl-participant.apl-participant",
-      "mappedBy": "team"
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "owners": {
+      "type": "json"
+    },
+    "group": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
     },
     "matches_as_team_a": {
       "type": "relation",
