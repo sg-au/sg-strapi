@@ -46,6 +46,12 @@
       "relation": "oneToMany",
       "target": "api::apl-match.apl-match",
       "mappedBy": "team_b"
+    },
+    "participants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apl-participant.apl-participant",
+      "mappedBy": "team"
     }
   }
 }

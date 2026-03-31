@@ -36,10 +36,10 @@
     "tier": {
       "type": "enumeration",
       "enum": [
-        "1",
-        "2",
-        "3",
-        "4"
+        "tier1",
+        "tier2",
+        "tier3",
+        "tier4"
       ]
     }
   }
