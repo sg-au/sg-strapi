@@ -72,6 +72,10 @@
     "points": {
       "type": "integer",
       "default": 0
+    },
+    "form_last_five": {
+      "type": "json",
+      "default": []
     }
   }
 }

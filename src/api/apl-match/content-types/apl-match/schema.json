@@ -23,6 +23,25 @@
       "relation": "manyToOne",
       "target": "api::apl-team.apl-team",
       "inversedBy": "matches_as_team_b"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "scheduled",
+        "completed"
+      ],
+      "default": "scheduled"
+    },
+    "team_a_score": {
+      "type": "integer",
+      "default": 0
+    },
+    "team_b_score": {
+      "type": "integer",
+      "default": 0
+    },
+    "played_at": {
+      "type": "datetime"
     }
   }
 }
