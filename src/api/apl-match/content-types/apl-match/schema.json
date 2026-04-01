@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apl_matches",
+  "info": {
+    "singularName": "apl-match",
+    "pluralName": "apl-matches",
+    "displayName": "APL Matches",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "team_a": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::apl-team.apl-team",
+      "inversedBy": "matches_as_team_a"
+    },
+    "team_b": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::apl-team.apl-team",
+      "inversedBy": "matches_as_team_b"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "scheduled",
+        "completed"
+      ],
+      "default": "scheduled"
+    },
+    "team_a_score": {
+      "type": "integer",
+      "default": 0
+    },
+    "team_b_score": {
+      "type": "integer",
+      "default": 0
+    },
+    "played_at": {
+      "type": "datetime"
+    }
+  }
+}

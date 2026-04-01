@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apl_teams",
+  "info": {
+    "singularName": "apl-team",
+    "pluralName": "apl-teams",
+    "displayName": "APL Team",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "owners": {
+      "type": "json"
+    },
+    "group": {
+      "type": "enumeration",
+      "enum": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    "matches_as_team_a": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apl-match.apl-match",
+      "mappedBy": "team_a"
+    },
+    "matches_as_team_b": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apl-match.apl-match",
+      "mappedBy": "team_b"
+    },
+    "participants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::apl-participant.apl-participant",
+      "mappedBy": "team"
+    },
+    "matches_played": {
+      "type": "integer",
+      "default": 0
+    },
+    "matches_won": {
+      "type": "integer",
+      "default": 0
+    },
+    "matches_lost": {
+      "type": "integer",
+      "default": 0
+    },
+    "matches_tied": {
+      "type": "integer",
+      "default": 0
+    },
+    "points": {
+      "type": "integer",
+      "default": 0
+    },
+    "form_last_five": {
+      "type": "json",
+      "default": []
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apl_participants",
+  "info": {
+    "singularName": "apl-participant",
+    "pluralName": "apl-participants",
+    "displayName": "APL Participant",
+    "description": "Auction prices are stored in millions."
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "isCM": {
+      "type": "boolean",
+      "default": false
+    },
+    "team": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::apl-team.apl-team",
+      "inversedBy": "participants"
+    },
+    "sold_at": {
+      "type": "float",
+      "min": 0
+    },
+    "tier": {
+      "type": "enumeration",
+      "enum": [
+        "tier1",
+        "tier2",
+        "tier3",
+        "tier4"
+      ]
+    }
+  }
+}
