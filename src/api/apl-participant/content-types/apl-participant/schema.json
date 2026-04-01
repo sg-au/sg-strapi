@@ -5,7 +5,7 @@
     "singularName": "apl-participant",
     "pluralName": "apl-participants",
     "displayName": "APL Participant",
-    "description": ""
+    "description": "Auction prices are stored in millions."
   },
   "options": {
     "draftAndPublish": false
@@ -31,7 +31,8 @@
       "inversedBy": "participants"
     },
     "sold_at": {
-      "type": "float"
+      "type": "float",
+      "min": 0
     },
     "tier": {
       "type": "enumeration",
