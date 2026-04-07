@@ -42,6 +42,10 @@
         "tier3",
         "tier4"
       ]
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
     }
   }
 }
