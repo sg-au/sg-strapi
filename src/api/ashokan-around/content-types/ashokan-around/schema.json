@@ -1,0 +1,69 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ashokan_arounds",
+  "info": {
+    "singularName": "ashokan-around",
+    "pluralName": "ashokan-arounds",
+    "displayName": "Ashokan Around",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "ashokan_arounds"
+    },
+    "cityDestination": {
+      "type": "string",
+      "required": true
+    },
+    "workplaceLocation": {
+      "type": "string"
+    },
+    "housingTypeWanted": {
+      "type": "enumeration",
+      "enum": [
+        "Single Room",
+        "Double Room",
+        "Triple Room",
+        "Flat/Apartment",
+        "Other"
+      ],
+      "required": true
+    },
+    "budget": {
+      "type": "string",
+      "required": true
+    },
+    "genderPreference": {
+      "type": "enumeration",
+      "enum": [
+        "No preference",
+        "Male",
+        "Female",
+        "Other"
+      ],
+      "required": true
+    },
+    "whatsappNumber": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "canceled",
+        "completed"
+      ],
+      "default": "available"
+    }
+  }
+}
