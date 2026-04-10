@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_match_goal_events",
+  "info": {
+    "displayName": "Goal Event",
+    "icon": "football",
+    "description": "A single goal scored in a match"
+  },
+  "options": {},
+  "attributes": {
+    "scorer_name": {
+      "type": "string",
+      "required": true
+    },
+    "minute": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "is_penalty": {
+      "type": "boolean",
+      "default": false
+    },
+    "team": {
+      "type": "enumeration",
+      "enum": [
+        "team_a",
+        "team_b"
+      ],
+      "required": true
+    }
+  }
+}

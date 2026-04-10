@@ -69,6 +69,11 @@
         },
         "status": {
             "type": "string"
+        },
+        "goal_events": {
+            "type": "component",
+            "repeatable": true,
+            "component": "match.goal-event"
         }
     }
 }
