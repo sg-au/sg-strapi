@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_match_card_events",
+  "info": {
+    "displayName": "Card Event",
+    "icon": "stop",
+    "description": "A yellow or red card issued in a match"
+  },
+  "options": {},
+  "attributes": {
+    "player": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::apl-participant.apl-participant"
+    },
+    "minute": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "card_type": {
+      "type": "enumeration",
+      "enum": [
+        "yellow",
+        "red",
+        "yellow_red"
+      ],
+      "required": true
+    },
+    "team": {
+      "type": "enumeration",
+      "enum": [
+        "team_a",
+        "team_b"
+      ],
+      "required": true
+    }
+  }
+}

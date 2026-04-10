@@ -1,18 +1,18 @@
 {
-  "collectionName": "components_match_goal_events",
+  "collectionName": "components_match_substitution_events",
   "info": {
-    "displayName": "Goal Event",
-    "icon": "football",
-    "description": "A single goal scored in a match"
+    "displayName": "Substitution Event",
+    "icon": "exchange",
+    "description": "A player substitution in a match"
   },
   "options": {},
   "attributes": {
-    "scorer": {
+    "player_off": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::apl-participant.apl-participant"
     },
-    "assister": {
+    "player_on": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::apl-participant.apl-participant"
@@ -21,14 +21,6 @@
       "type": "integer",
       "required": true,
       "min": 1
-    },
-    "is_penalty": {
-      "type": "boolean",
-      "default": false
-    },
-    "is_own_goal": {
-      "type": "boolean",
-      "default": false
     },
     "team": {
       "type": "enumeration",

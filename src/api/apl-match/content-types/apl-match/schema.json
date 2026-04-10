@@ -48,6 +48,16 @@
       "repeatable": true,
       "component": "match.goal-event"
     },
+    "card_events": {
+      "type": "component",
+      "repeatable": true,
+      "component": "match.card-event"
+    },
+    "substitution_events": {
+      "type": "component",
+      "repeatable": true,
+      "component": "match.substitution-event"
+    },
     "round": {
       "type": "enumeration",
       "enum": [
