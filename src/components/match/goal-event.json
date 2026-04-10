@@ -7,9 +7,15 @@
   },
   "options": {},
   "attributes": {
-    "scorer_name": {
-      "type": "string",
-      "required": true
+    "scorer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::apl-participant.apl-participant"
+    },
+    "assister": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::apl-participant.apl-participant"
     },
     "minute": {
       "type": "integer",
