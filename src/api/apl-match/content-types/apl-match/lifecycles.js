@@ -34,6 +34,16 @@ const recomputeAplStandings = async (strapi) => {
     pagination: { pageSize: 1000 },
   });
 
+  const participants = await strapi.entityService.findMany('api::apl-participant.apl-participant', {
+    fields: ['id'],
+    pagination: { pageSize: 1000 },
+  });
+
+  const statsByParticipantId = new Map();
+  for (const participant of participants) {
+    statsByParticipantId.set(participant.id, { goals: 0, assists: 0 });
+  }
+
   const statsByTeamId = new Map();
   for (const team of teams) {
     statsByTeamId.set(team.id, {
@@ -53,6 +63,12 @@ const recomputeAplStandings = async (strapi) => {
     populate: {
       team_a: { fields: ['id'] },
       team_b: { fields: ['id'] },
+      goal_events: {
+        populate: {
+          scorer: { fields: ['id'] },
+          assister: { fields: ['id'] },
+        },
+      },
     },
     pagination: { pageSize: 10000 },
     sort: ['played_at:asc', 'id:asc'],
@@ -72,6 +88,17 @@ const recomputeAplStandings = async (strapi) => {
 
     teamAStats.matches_played += 1;
     teamBStats.matches_played += 1;
+
+    for (const event of match.goal_events || []) {
+      const scorerId = event.scorer?.id;
+      const assisterId = event.assister?.id;
+      if (scorerId && statsByParticipantId.has(scorerId)) {
+        statsByParticipantId.get(scorerId).goals += 1;
+      }
+      if (assisterId && statsByParticipantId.has(assisterId)) {
+        statsByParticipantId.get(assisterId).assists += 1;
+      }
+    }
 
     teamAStats.goals_for += aScore;
     teamAStats.goals_against += bScore;
@@ -115,6 +142,14 @@ const recomputeAplStandings = async (strapi) => {
         goals_for: stats.goals_for,
         goals_against: stats.goals_against,
         form_last_five: formLastFive,
+      },
+    });
+  }
+  for (const [participantId, stats] of statsByParticipantId.entries()) {
+    await strapi.entityService.update('api::apl-participant.apl-participant', participantId, {
+      data: {
+        goals: stats.goals,
+        assists: stats.assists,
       },
     });
   }
