@@ -42,6 +42,11 @@
     },
     "played_at": {
       "type": "datetime"
+    },
+    "goal_events": {
+      "type": "component",
+      "repeatable": true,
+      "component": "match.goal-event"
     }
   }
 }
