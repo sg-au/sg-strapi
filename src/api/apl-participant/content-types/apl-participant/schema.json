@@ -59,7 +59,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "mappedBy": "fantasy_teams"
+      "mappedBy": "apl_fantasy_teams"
     }
   }
 }
