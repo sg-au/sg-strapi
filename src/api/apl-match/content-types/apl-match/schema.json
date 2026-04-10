@@ -47,6 +47,19 @@
       "type": "component",
       "repeatable": true,
       "component": "match.goal-event"
+    },
+    "round": {
+      "type": "enumeration",
+      "enum": [
+        "group_stage",
+        "round_of_16",
+        "quarter_final",
+        "semi_final",
+        "final"
+      ]
+    },
+    "match_number": {
+      "type": "integer"
     }
   }
 }
