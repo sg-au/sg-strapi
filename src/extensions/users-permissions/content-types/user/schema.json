@@ -258,6 +258,12 @@
       "relation": "manyToMany",
       "target": "api::apl-participant.apl-participant",
       "inversedBy": "users_fantasy"
+    },
+    "ashokan_arounds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ashokan-around.ashokan-around",
+      "mappedBy": "student"
     }
   }
 }
