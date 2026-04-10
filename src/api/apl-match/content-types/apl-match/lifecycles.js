@@ -59,7 +59,7 @@ const recomputeAplStandings = async (strapi) => {
   }
 
   const matches = await strapi.entityService.findMany('api::apl-match.apl-match', {
-    fields: ['id', 'status', 'team_a_score', 'team_b_score', 'played_at'],
+    fields: ['id', 'status', 'team_a_score', 'team_b_score', 'start_time'],
     populate: {
       team_a: { fields: ['id'] },
       team_b: { fields: ['id'] },
@@ -71,7 +71,7 @@ const recomputeAplStandings = async (strapi) => {
       },
     },
     pagination: { pageSize: 10000 },
-    sort: ['played_at:asc', 'id:asc'],
+    sort: ['start_time:asc', 'id:asc'],
   });
 
   for (const match of matches) {

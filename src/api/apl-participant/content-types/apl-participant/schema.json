@@ -54,6 +54,12 @@
     "assists": {
       "type": "integer",
       "default": 0
+    },
+    "users_fantasy": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "fantasy_teams"
     }
   }
 }

@@ -27,10 +27,11 @@
     "status": {
       "type": "enumeration",
       "enum": [
-        "scheduled",
+        "upcoming",
+        "live",
         "completed"
       ],
-      "default": "scheduled"
+      "default": "upcoming"
     },
     "team_a_score": {
       "type": "integer",
@@ -40,8 +41,29 @@
       "type": "integer",
       "default": 0
     },
-    "played_at": {
+    "start_time": {
       "type": "datetime"
+    },
+    "period": {
+      "type": "enumeration",
+      "enum": [
+        "not_started",
+        "first_half",
+        "half_time",
+        "second_half",
+        "extra_time_first",
+        "extra_time_second",
+        "penalty_shootout",
+        "full_time"
+      ],
+      "default": "not_started"
+    },
+    "period_start_time": {
+      "type": "datetime"
+    },
+    "stoppage_time": {
+      "type": "integer",
+      "default": 0
     },
     "goal_events": {
       "type": "component",
