@@ -42,6 +42,8 @@ const recomputeAplStandings = async (strapi) => {
       matches_lost: 0,
       matches_tied: 0,
       points: 0,
+      goals_for: 0,
+      goals_against: 0,
       form: [],
     });
   }
@@ -70,6 +72,11 @@ const recomputeAplStandings = async (strapi) => {
 
     teamAStats.matches_played += 1;
     teamBStats.matches_played += 1;
+
+    teamAStats.goals_for += aScore;
+    teamAStats.goals_against += bScore;
+    teamBStats.goals_for += bScore;
+    teamBStats.goals_against += aScore;
 
     if (aScore > bScore) {
       teamAStats.matches_won += 1;
@@ -105,6 +112,8 @@ const recomputeAplStandings = async (strapi) => {
         matches_lost: stats.matches_lost,
         matches_tied: stats.matches_tied,
         points: stats.points,
+        goals_for: stats.goals_for,
+        goals_against: stats.goals_against,
         form_last_five: formLastFive,
       },
     });

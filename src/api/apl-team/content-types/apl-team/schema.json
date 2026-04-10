@@ -76,6 +76,14 @@
     "form_last_five": {
       "type": "json",
       "default": []
+    },
+    "goals_for": {
+      "type": "integer",
+      "default": 0
+    },
+    "goals_against": {
+      "type": "integer",
+      "default": 0
     }
   }
 }
