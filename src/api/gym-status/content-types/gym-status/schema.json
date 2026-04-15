@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "gym_statuses",
+  "info": {
+    "singularName": "gym-status",
+    "pluralName": "gym-statuses",
+    "displayName": "Gym Status",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "active_count": {
+      "type": "integer"
+    },
+    "total_logs": {
+      "type": "json"
+    }
+  }
+}

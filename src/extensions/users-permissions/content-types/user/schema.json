@@ -258,6 +258,9 @@
       "relation": "oneToMany",
       "target": "api::ashokan-around.ashokan-around",
       "mappedBy": "student"
+    },
+    "gym_logs": {
+      "type": "json"
     }
   }
 }
