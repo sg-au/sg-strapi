@@ -80,6 +80,11 @@
       "repeatable": true,
       "component": "match.substitution-event"
     },
+    "save_events": {
+      "type": "component",
+      "repeatable": true,
+      "component": "match.save-event"
+    },
     "round": {
       "type": "enumeration",
       "enum": [
