@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_match_goal_events",
+  "info": {
+    "displayName": "Goal Event",
+    "icon": "football",
+    "description": "A single goal scored in a match"
+  },
+  "options": {},
+  "attributes": {
+    "scorer": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::apl-participant.apl-participant"
+    },
+    "assister": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::apl-participant.apl-participant"
+    },
+    "minute": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "is_penalty": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_own_goal": {
+      "type": "boolean",
+      "default": false
+    },
+    "team": {
+      "type": "enumeration",
+      "enum": [
+        "team_a",
+        "team_b"
+      ],
+      "required": true
+    }
+  }
+}

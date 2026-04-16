@@ -253,6 +253,12 @@
       "target": "api::aba-participant.aba-participant",
       "inversedBy": "users_fantasy"
     },
+    "apl_fantasy_teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::apl-participant.apl-participant",
+      "inversedBy": "users_fantasy"
+    },
     "ashokan_arounds": {
       "type": "relation",
       "relation": "oneToMany",

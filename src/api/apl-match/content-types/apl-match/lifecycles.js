@@ -34,6 +34,16 @@ const recomputeAplStandings = async (strapi) => {
     pagination: { pageSize: 1000 },
   });
 
+  const participants = await strapi.entityService.findMany('api::apl-participant.apl-participant', {
+    fields: ['id'],
+    pagination: { pageSize: 1000 },
+  });
+
+  const statsByParticipantId = new Map();
+  for (const participant of participants) {
+    statsByParticipantId.set(participant.id, { goals: 0, assists: 0 });
+  }
+
   const statsByTeamId = new Map();
   for (const team of teams) {
     statsByTeamId.set(team.id, {
@@ -42,18 +52,26 @@ const recomputeAplStandings = async (strapi) => {
       matches_lost: 0,
       matches_tied: 0,
       points: 0,
+      goals_for: 0,
+      goals_against: 0,
       form: [],
     });
   }
 
   const matches = await strapi.entityService.findMany('api::apl-match.apl-match', {
-    fields: ['id', 'status', 'team_a_score', 'team_b_score', 'played_at'],
+    fields: ['id', 'status', 'team_a_score', 'team_b_score', 'start_time'],
     populate: {
       team_a: { fields: ['id'] },
       team_b: { fields: ['id'] },
+      goal_events: {
+        populate: {
+          scorer: { fields: ['id'] },
+          assister: { fields: ['id'] },
+        },
+      },
     },
     pagination: { pageSize: 10000 },
-    sort: ['played_at:asc', 'id:asc'],
+    sort: ['start_time:asc', 'id:asc'],
   });
 
   for (const match of matches) {
@@ -70,6 +88,22 @@ const recomputeAplStandings = async (strapi) => {
 
     teamAStats.matches_played += 1;
     teamBStats.matches_played += 1;
+
+    for (const event of match.goal_events || []) {
+      const scorerId = event.scorer?.id;
+      const assisterId = event.assister?.id;
+      if (scorerId && statsByParticipantId.has(scorerId)) {
+        statsByParticipantId.get(scorerId).goals += 1;
+      }
+      if (assisterId && statsByParticipantId.has(assisterId)) {
+        statsByParticipantId.get(assisterId).assists += 1;
+      }
+    }
+
+    teamAStats.goals_for += aScore;
+    teamAStats.goals_against += bScore;
+    teamBStats.goals_for += bScore;
+    teamBStats.goals_against += aScore;
 
     if (aScore > bScore) {
       teamAStats.matches_won += 1;
@@ -105,7 +139,17 @@ const recomputeAplStandings = async (strapi) => {
         matches_lost: stats.matches_lost,
         matches_tied: stats.matches_tied,
         points: stats.points,
+        goals_for: stats.goals_for,
+        goals_against: stats.goals_against,
         form_last_five: formLastFive,
+      },
+    });
+  }
+  for (const [participantId, stats] of statsByParticipantId.entries()) {
+    await strapi.entityService.update('api::apl-participant.apl-participant', participantId, {
+      data: {
+        goals: stats.goals,
+        assists: stats.assists,
       },
     });
   }

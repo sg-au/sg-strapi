@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_match_substitution_events",
+  "info": {
+    "displayName": "Substitution Event",
+    "icon": "exchange",
+    "description": "A player substitution in a match"
+  },
+  "options": {},
+  "attributes": {
+    "player_off": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::apl-participant.apl-participant"
+    },
+    "player_on": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::apl-participant.apl-participant"
+    },
+    "minute": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "team": {
+      "type": "enumeration",
+      "enum": [
+        "team_a",
+        "team_b"
+      ],
+      "required": true
+    }
+  }
+}

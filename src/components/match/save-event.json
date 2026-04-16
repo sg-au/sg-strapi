@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_match_save_events",
+  "info": {
+    "displayName": "Save Event",
+    "icon": "shield",
+    "description": "A goalkeeper save in a match"
+  },
+  "options": {},
+  "attributes": {
+    "goalkeeper": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::apl-participant.apl-participant"
+    },
+    "saves": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "default": 1
+    },
+    "minute": {
+      "type": "integer",
+      "required": true,
+      "min": 1
+    },
+    "team": {
+      "type": "enumeration",
+      "enum": [
+        "team_a",
+        "team_b"
+      ],
+      "required": true
+    }
+  }
+}
