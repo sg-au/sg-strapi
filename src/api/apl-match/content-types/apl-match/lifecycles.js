@@ -54,6 +54,7 @@ const recomputeAplStandings = async (strapi) => {
       points: 0,
       goals_for: 0,
       goals_against: 0,
+      clean_sheets: 0,
       form: [],
     });
   }
@@ -105,6 +106,15 @@ const recomputeAplStandings = async (strapi) => {
     teamBStats.goals_for += bScore;
     teamBStats.goals_against += aScore;
 
+    if (aScore === 0 && bScore === 0) {
+      teamAStats.clean_sheets += 1;
+      teamBStats.clean_sheets += 1;
+    } else if (bScore === 0) {
+      teamAStats.clean_sheets += 1;
+    } else if (aScore === 0) {
+      teamBStats.clean_sheets += 1;
+    }
+
     if (aScore > bScore) {
       teamAStats.matches_won += 1;
       teamAStats.points += WIN_POINTS;
@@ -141,6 +151,7 @@ const recomputeAplStandings = async (strapi) => {
         points: stats.points,
         goals_for: stats.goals_for,
         goals_against: stats.goals_against,
+        clean_sheets: stats.clean_sheets,
         form_last_five: formLastFive,
       },
     });

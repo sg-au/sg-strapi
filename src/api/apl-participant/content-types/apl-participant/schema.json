@@ -55,10 +55,6 @@
       "type": "integer",
       "default": 0
     },
-    "clean_sheets": {
-      "type": "integer",
-      "default": 0
-    },
     "users_fantasy": {
       "type": "relation",
       "relation": "manyToMany",

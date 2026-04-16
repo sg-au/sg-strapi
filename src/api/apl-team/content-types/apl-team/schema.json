@@ -86,6 +86,10 @@
     "goals_against": {
       "type": "integer",
       "default": 0
+    },
+    "clean_sheets": {
+      "type": "integer",
+      "default": 0
     }
   }
 }
