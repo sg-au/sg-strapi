@@ -97,6 +97,26 @@
     },
     "match_number": {
       "type": "integer"
+    },
+    "team_a_starting_player_count": {
+      "type": "integer",
+      "default": 10,
+      "min": 8,
+      "max": 10
+    },
+    "team_b_starting_player_count": {
+      "type": "integer",
+      "default": 10,
+      "min": 8,
+      "max": 10
+    },
+    "team_a_starters": {
+      "type": "json",
+      "default": []
+    },
+    "team_b_starters": {
+      "type": "json",
+      "default": []
     }
   }
 }
