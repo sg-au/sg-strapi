@@ -93,7 +93,7 @@ const recomputeAplStandings = async (strapi) => {
     for (const event of match.goal_events || []) {
       const scorerId = event.scorer?.id;
       const assisterId = event.assister?.id;
-      if (scorerId && statsByParticipantId.has(scorerId)) {
+      if (!event.is_penalty && scorerId && statsByParticipantId.has(scorerId)) {
         statsByParticipantId.get(scorerId).goals += 1;
       }
       if (assisterId && statsByParticipantId.has(assisterId)) {
