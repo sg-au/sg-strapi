@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_outlet_reviews",
+  "info": {
+    "singularName": "food-outlet-review",
+    "pluralName": "food-outlet-reviews",
+    "displayName": "Food Outlet Review",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rating": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "max": 5
+    },
+    "reviewText": {
+      "type": "text"
+    },
+    "foodOutlet": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::food-outlet.food-outlet",
+      "inversedBy": "reviews"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}

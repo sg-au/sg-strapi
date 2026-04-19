@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_outlets",
+  "info": {
+    "singularName": "food-outlet",
+    "pluralName": "food-outlets",
+    "displayName": "Food Outlet"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "outletId": {
+      "type": "uid",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "location": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cuisine": {
+      "type": "string"
+    },
+    "contactNumber": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isOpen": {
+      "type": "boolean",
+      "default": true
+    },
+    "openingHours": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "ratingCount": {
+      "type": "integer",
+      "default": 0
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.food-item"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::food-outlet-review.food-outlet-review",
+      "mappedBy": "foodOutlet"
+    }
+  }
+}

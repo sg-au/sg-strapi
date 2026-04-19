@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_menu_food_items",
+  "info": {
+    "displayName": "food-item",
+    "icon": "restaurant"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "integer"
+    },
+    "isMRP": {
+      "type": "boolean",
+      "default": false
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Snacks",
+        "Main Course",
+        "Beverages",
+        "Coffee",
+        "Desserts",
+        "Pizza",
+        "Rolls",
+        "Sides",
+        "Pasta",
+        "Juices",
+        "Smoothies",
+        "Healthy",
+        "Wraps"
+      ],
+      "required": true
+    },
+    "calories": {
+      "type": "integer"
+    },
+    "foodType": {
+      "type": "enumeration",
+      "enum": [
+        "veg",
+        "non-veg",
+        "egg"
+      ],
+      "required": true,
+      "default": "veg"
+    },
+    "allergens": {
+      "type": "string",
+      "default": "None"
+    }
+  }
+}
