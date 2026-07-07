@@ -38,6 +38,21 @@
       "relation": "manyToOne",
       "target": "api::organisation.organisation",
       "inversedBy": "advertisements"
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "title_style": {
+      "type": "json"
+    },
+    "subtitle_style": {
+      "type": "json"
+    },
+    "description_style": {
+      "type": "json"
     }
   }
 }
