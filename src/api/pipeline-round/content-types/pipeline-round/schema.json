@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pipeline_rounds",
+  "info": {
+    "singularName": "pipeline-round",
+    "pluralName": "pipeline-rounds",
+    "displayName": "Pipeline Round",
+    "description": "Induction pipeline stages (Form, Interview When2Meet, Results)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "form",
+        "interview",
+        "results"
+      ],
+      "default": "form",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "active",
+        "completed",
+        "paused"
+      ],
+      "default": "active",
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "description": {
+      "type": "text"
+    },
+    "form": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::form.form"
+    },
+    "form_ids": {
+      "type": "json"
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::induction-role.induction-role",
+      "inversedBy": "pipeline_rounds"
+    },
+    "interview_config": {
+      "type": "json"
+    },
+    "results_config": {
+      "type": "json"
+    }
+  }
+}

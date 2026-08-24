@@ -117,6 +117,12 @@
       "relation": "oneToMany",
       "target": "api::form.form",
       "mappedBy": "organisation"
+    },
+    "induction_cycles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::induction-cycle.induction-cycle",
+      "mappedBy": "organisation"
     }
   }
 }

@@ -51,6 +51,32 @@
     },
     "files": {
       "type": "json"
+    },
+    "application_status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "advanced"
+      ],
+      "default": "pending"
+    },
+    "status_message": {
+      "type": "text"
+    },
+    "rejection_reason": {
+      "type": "text"
+    },
+    "current_round": {
+      "type": "integer",
+      "default": 0
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::induction-role.induction-role",
+      "inversedBy": "applications"
     }
   }
 }

@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "induction_cycles",
+  "info": {
+    "singularName": "induction-cycle",
+    "pluralName": "induction-cycles",
+    "displayName": "Induction Cycle",
+    "description": "Recruitment and induction cycles for organizations"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "draft",
+        "active",
+        "completed",
+        "archived"
+      ],
+      "default": "draft",
+      "required": true
+    },
+    "start_date": {
+      "type": "date"
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    },
+    "stats": {
+      "type": "json"
+    },
+    "organisation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organisation.organisation",
+      "inversedBy": "induction_cycles"
+    },
+    "roles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::induction-role.induction-role",
+      "mappedBy": "induction_cycle"
+    }
+  }
+}

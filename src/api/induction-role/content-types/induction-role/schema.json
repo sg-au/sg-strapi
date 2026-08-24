@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "induction_roles",
+  "info": {
+    "singularName": "induction-role",
+    "pluralName": "induction-roles",
+    "displayName": "Induction Role",
+    "description": "Specific positions/roles recruiting under an induction cycle"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "tier": {
+      "type": "enumeration",
+      "enum": [
+        "tier-1",
+        "tier-2",
+        "other"
+      ],
+      "default": "tier-1",
+      "required": true
+    },
+    "department": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "access_emails": {
+      "type": "json"
+    },
+    "stats": {
+      "type": "json"
+    },
+    "induction_cycle": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::induction-cycle.induction-cycle",
+      "inversedBy": "roles"
+    },
+    "pipeline_rounds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pipeline-round.pipeline-round",
+      "mappedBy": "role"
+    },
+    "applications": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::form-response.form-response",
+      "mappedBy": "role"
+    }
+  }
+}
